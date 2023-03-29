@@ -1,14 +1,14 @@
 CREATE TABLE utilisateurs (
-    id_user AUTO_INCREMENT PRIMARY KEY,
+    id_user INT AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(50) NOT NULL,
-    email VARCHAR(50) UNIQUE,
+    email VARCHAR(50),
     mot_de_passe VARCHAR(60)
 );
 
 CREATE TABLE postits (
-    id_post AUTO_INCREMENT PRIMARY KEY,
-    titre VARCHAR2,
-    contenu VARCHAR2,
+    id_post INT AUTO_INCREMENT PRIMARY KEY,
+    titre VARCHAR(50) NOT NULL,
+    contenu VARCHAR(255),
     date_creation DATETIME,
     date_derniere_modif DATETIME,
     createur_id INT,
@@ -16,7 +16,7 @@ CREATE TABLE postits (
 );
 
 CREATE TABLE partages (
-    id_share AUTO_INCREMENT PRIMARY KEY,
+    id_share INT AUTO_INCREMENT PRIMARY KEY,
     postit_id INT,
     destinataire_id INT,
     FOREIGN KEY (postit_id) REFERENCES postits(id),
