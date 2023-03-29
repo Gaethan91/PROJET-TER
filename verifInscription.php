@@ -6,6 +6,10 @@ require_once('config.php');
 //On se connecte à la base de données bdd.sql
 $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
 
+// Recupère les données de connexion de la base de données bdd.sql pour mysql
+$bdd = new PDO('mysql:host=localhost;dbname=ter;charset=utf8', 'root', '');
+
+
 //On vérifie si la connexion a réussi
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
